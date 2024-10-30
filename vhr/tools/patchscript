@@ -84,20 +84,7 @@ process_game() {
     # Delete unnecessary files
     rm -rf $DATADIR/GMLive $DATADIR/*.mp4
     rm -rf $DATADIR/*.exe $DATADIR/*.dll $DATADIR/.gitkeep
-    echo "Removed unecessary files"
-    
-    # Rename directories to lowercase
-    echo "Renaming directories to lowercase..."
-    for dir in $DATADIR/data/*/; do
-        lowercase_dir=$(echo "$dir" | tr 'A-Z' 'a-z')
-        if [ "$dir" != "$lowercase_dir" ]; then
-            # Move to a temp location first
-            mv "$dir" /tmp/temp_dir
-            # Then move it back with the new name
-            mv /tmp/temp_dir "$lowercase_dir"
-        fi
-    done
-    echo "Renamed directories to lowercase"
+    echo "Removed unnecessary files"
 
     apply_xdelta
     #compress_audio
