@@ -55,9 +55,9 @@ if [ -f "$GAMEDIR/patchlog.txt" ]; then
 fi
 
 # Assign gptokeyb and load the game
-$GPTOKEYB "gmloadernext" -c "vhr.gptk" &
-pm_platform_helper "gmloadernext"
-./gmloadernext game.apk
+$GPTOKEYB "gmloader.aarch64" -c "vhr.gptk" &
+pm_platform_helper "gmloader.aarch64"
+./gmloader.aarch64 -c "gmloader.json"
 
 # Cleanup
 pm_finish
